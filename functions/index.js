@@ -660,9 +660,9 @@ const schemaDefault = (col, schema) => functions.firestore.document(`${col}/{id}
 //exports.schemaApp = schemaDefault('app', 'schemaApp'),
 //exports.schemaFormTemplate = schemaDefault('formTemplate', 'schemaFormTemplate')
 
-//const schema = require('loveyouforms-schema');
+const schema = require('loveyouforms-schema');
 
-const schema = require('./schema');
+//const schema = require('./schema');
 //const sortObjectsAsc = (array, propKey) => loveYouFormsUtil.sortObjectsAsc(array, propKey);
 
 
