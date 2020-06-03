@@ -634,7 +634,7 @@ exports.firestoreToSheets = functions.firestore.document('submitForm/{formId}')
   When a new 'doc' is created this adds default fields/schema to it
   Parameters: 'col' is collection type and 'schema' is from 'global' collection
  ------------------------------------------------------------------------------*/
-
+/*
 const schemaDefault = (col, schema) => functions.firestore.document(`${col}/{id}`)
   .onCreate(async (snapshot, context) => {
 
@@ -655,7 +655,17 @@ const schemaDefault = (col, schema) => functions.firestore.document(`${col}/{id}
   }
 
 });
-
+*/
 // Default schema functions for 'app' and 'formTemplate' collections
-exports.schemaApp = schemaDefault('app', 'schemaApp'),
-exports.schemaFormTemplate = schemaDefault('formTemplate', 'schemaFormTemplate')
+//exports.schemaApp = schemaDefault('app', 'schemaApp'),
+//exports.schemaFormTemplate = schemaDefault('formTemplate', 'schemaFormTemplate')
+
+//const schema = require('loveyouforms-schema');
+
+const schema = require('./schema');
+//const sortObjectsAsc = (array, propKey) => loveYouFormsUtil.sortObjectsAsc(array, propKey);
+
+
+exports.schemaFormTemplate = schema.schemaDefault(functions, db, logErrorInfo, 'formTemplate', 'schemaFormTemplate');
+//exports.schemaApp = myApp(db, 'app', 'schemaApp');
+exports.schemaApp = schema.schemaDefault(functions, db, logErrorInfo, 'app', 'schemaApp');
