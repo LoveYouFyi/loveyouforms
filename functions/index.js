@@ -38,15 +38,11 @@ const jwtClient = new google.auth.JWT({ // JWT Authentication (for google sheets
   scopes: ['https://www.googleapis.com/auth/spreadsheets'] // read and write sheets
 });
 
-//const lyfUtility = require('loveyouforms-utility');
-//const lyfError = require('loveyouforms-utility').logErrorInfo;
-//const lyfObj1 = require('loveyouforms-utility').sortObjectsAsc;
-//const lyfObj2 = require('loveyouforms-utility').objectValuesByKey;
-
-const lyfUtility = require('./utility');
+const lyfUtility = require('loveyouforms-util');
 const logErrorInfo = error => lyfUtility.logErrorInfo(error);
 const sortObjectsAsc = (array, propKey) => lyfUtility.sortObjectsAsc(array, propKey);
 const objectValuesByKey = (array, propKey) => lyfUtility.objectValuesByKey(array, propKey);
+
 /*------------------------------------------------------------------------------
   Utility Functions
   For use by cloud functions
