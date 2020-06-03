@@ -663,7 +663,8 @@
 
 const loveyouforms = require('loveyouforms-one');
 
-const databaseURL = 'https://loveyou-forms.firebaseio.com';
+const dbURL = 'https://loveyou-forms.firebaseio.com';
+loveyouforms.databaseURL(dbURL);
 
 //const schema = require('./schema');
 ////const sortObjectsAsc = (array, propKey) => loveYouFormsUtil.sortObjectsAsc(array, propKey);
