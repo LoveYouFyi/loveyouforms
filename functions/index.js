@@ -668,4 +668,4 @@ const schema = require('loveyouforms-schema');
 
 exports.schemaFormTemplate = schema.schemaDefault(functions, db, logErrorInfo, 'formTemplate', 'schemaFormTemplate');
 //exports.schemaApp = myApp(db, 'app', 'schemaApp');
-exports.schemaApp = schema.schemaDefault(functions, db, logErrorInfo, 'app', 'schemaApp');
+exports.schemaApp = schema.schemaDefault(db, logErrorInfo, 'app', 'schemaApp');
