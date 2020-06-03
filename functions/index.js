@@ -38,10 +38,10 @@ const jwtClient = new google.auth.JWT({ // JWT Authentication (for google sheets
   scopes: ['https://www.googleapis.com/auth/spreadsheets'] // read and write sheets
 });
 
-const lyfUtility = require('loveyouforms-util');
-const logErrorInfo = error => lyfUtility.logErrorInfo(error);
-const sortObjectsAsc = (array, propKey) => lyfUtility.sortObjectsAsc(array, propKey);
-const objectValuesByKey = (array, propKey) => lyfUtility.objectValuesByKey(array, propKey);
+const loveYouFormsUtil = require('loveyouforms-util');
+const logErrorInfo = error => loveYouFormsUtil.logErrorInfo(error);
+const sortObjectsAsc = (array, propKey) => loveYouFormsUtil.sortObjectsAsc(array, propKey);
+const objectValuesByKey = (array, propKey) => loveYouFormsUtil.objectValuesByKey(array, propKey);
 
 /*------------------------------------------------------------------------------
   Utility Functions
