@@ -7,9 +7,9 @@
  Dependencies for all cloud functions
 ------------------------------------------------------------------------------*/
 // FIREBASE FUNCTIONS SDK: to create Cloud Functions and setup triggers
-const functions = require('firebase-functions');
+//const functions = require('firebase-functions');
 // DATABASE CREDENTIALS: so cloud functions can authenticate with the database
-const serviceAccount = require('./service-account.json'); // download from firebase console
+//const serviceAccount = require('./service-account.json'); // download from firebase console
 // FIREBASE ADMIN SDK: to interact with the Firestore (or firebase) database
 //const admin = require('firebase-admin');
 //admin.initializeApp({ // initialize firebase admin with credentials
@@ -38,8 +38,8 @@ const serviceAccount = require('./service-account.json'); // download from fireb
   //scopes: ['https://www.googleapis.com/auth/spreadsheets'] // read and write sheets
 //});
 
-const loveYouFormsUtil = require('loveyouforms-util');
-const logErrorInfo = error => loveYouFormsUtil.logErrorInfo(error);
+//const loveYouFormsUtil = require('loveyouforms-util');
+//const logErrorInfo = error => loveYouFormsUtil.logErrorInfo(error);
 //const sortObjectsAsc = (array, propKey) => loveYouFormsUtil.sortObjectsAsc(array, propKey);
 //const objectValuesByKey = (array, propKey) => loveYouFormsUtil.objectValuesByKey(array, propKey);
 
@@ -660,12 +660,19 @@ const logErrorInfo = error => loveYouFormsUtil.logErrorInfo(error);
 ////exports.schemaApp = schemaDefault('app', 'schemaApp'),
 ////exports.schemaFormTemplate = schemaDefault('formTemplate', 'schemaFormTemplate')
 
-const schema = require('loveyouforms-schema');
+
+const loveyouforms = require('loveyouforms-one');
+
+const databaseURL = 'https://loveyou-forms.firebaseio.com';
 
 //const schema = require('./schema');
 ////const sortObjectsAsc = (array, propKey) => loveYouFormsUtil.sortObjectsAsc(array, propKey);
 
+exports.formHandler = loveyouforms.formHandler;
+exports.firestoreToSheets = loveyouforms.firestoreToSheets;
 
 //exports.schemaFormTemplate = schema.schemaDefault(functions, db, logErrorInfo, 'formTemplate', 'schemaFormTemplate');
 //exports.schemaApp = myApp(db, 'app', 'schemaApp');
-exports.schemaApp = schema.schemaDefault(logErrorInfo, 'app', 'schemaApp');
+exports.schemaApp = loveyouforms.schemaApp;
+exports.schemaFormTemplate = loveyouforms.schemaFormTemplate;
+
