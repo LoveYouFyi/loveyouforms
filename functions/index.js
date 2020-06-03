@@ -21,7 +21,7 @@ const db = admin.firestore(); // FireStore database reference
  Dependencies formHandler function: capture form submissions & save to database
  ------------------------------------------------------------------------------*/
 // TIMESTAMPS: for adding server-timestamps to database docs
-const FieldValue = require('firebase-admin').firestore.FieldValue; // Timestamp here
+const FieldValue = admin.firestore.FieldValue; // Timestamp here
 const timestampSettings = { timestampsInSnapshots: true }; // Define timestamp settings
 db.settings(timestampSettings); // Apply timestamp settings to database settings
 // AKISMET SPAM FILTER
