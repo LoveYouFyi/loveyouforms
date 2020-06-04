@@ -1,5 +1,5 @@
 {
-  "name": "loveyouforms",
+  "name": "loveyouforms-app",
   "description": "Cloud app to handle form submissions for one website or 1,000 using Firebase platform",
   "version": "",
   "license": "MIT",
@@ -33,7 +33,7 @@
   "dependencies": {
     "firestore-export-import": "^0.5.0",
     "fs": "0.0.1-security",
-    "loveyouforms": "^1.0.0"
+    "loveyouforms": "^1.0.1"
   },
   "devDependencies": {
     "firebase-functions-test": "^0.1.6"
