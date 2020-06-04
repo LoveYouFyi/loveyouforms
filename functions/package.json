@@ -1,6 +1,7 @@
 {
   "name": "loveyouforms",
   "description": "Cloud app to handle form submissions for one website or 1,000 using Firebase platform",
+  "version": "",
   "license": "MIT",
   "contributors": [
     {
@@ -10,7 +11,7 @@
     }
   ],
   "engines": {
-    "node": "8"
+    "node": "10"
   },
   "## Scripts Notes ########################################################": {
     "exportData": "you may never need this",
