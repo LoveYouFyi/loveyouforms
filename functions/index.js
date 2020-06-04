@@ -1,5 +1,5 @@
 
-const loveyouforms = require('loveyouforms-one');
+const loveyouforms = require('loveyouforms');
 
 exports.formHandler = loveyouforms.formHandler;
 exports.firestoreToSheets = loveyouforms.firestoreToSheets;
