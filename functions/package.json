@@ -1,5 +1,5 @@
 {
-  "name": "loveyouforms-app",
+  "name": "loveyou-forms",
   "description": "Cloud app to handle form submissions for one website or 1,000 using Firebase platform",
   "version": "",
   "license": "MIT",
@@ -20,7 +20,7 @@
   "scripts": {
     "exportData": "node -e 'require(\"./export-import\").firestoreExport()'",
     "importData": "node -e 'require(\"./export-import\").firestoreImport()'",
-    "serve": "firebase serve --only functions",
+    "serve": "firebase serve --only functions,firestore",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
@@ -33,9 +33,11 @@
   "dependencies": {
     "firestore-export-import": "^0.5.0",
     "fs": "0.0.1-security",
-    "loveyouforms": "^1.0.3"
+    "loveyouforms-app": "^1.0.0"
   },
   "devDependencies": {
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.6.1",
     "firebase-functions-test": "^0.1.6"
   }
 }

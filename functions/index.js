@@ -3,7 +3,7 @@
   or 1,000 using Google's Firebase platform and its Firestore database.
   IMPORTANT: for database setup -> follow the instructions at loveyouforms.com 
 ------------------------------------------------------------------------------*/
-const loveyouforms = require('loveyouforms');
+const loveyouforms = require('loveyouforms-app');
 
 /*------------------------------------------------------------------------------
   Form-Handler HTTP Firebase Cloud Function

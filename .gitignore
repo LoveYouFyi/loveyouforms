@@ -1,6 +1,9 @@
 # Firebase 
 service-account*.json
 .firebaserc
+firebase.json
+firestore_import_production*
+firebase-export-metadata.json
 
 # Export/Import Data
 exported*.json
