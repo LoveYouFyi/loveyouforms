@@ -1,9 +1,9 @@
 /*------------------------------------------------------------------------------
   LoveYouForms is a cloud app that handles form submissions for one website 
-  or 1,000 using Google's Firebase platform and its Firestore database.
-  IMPORTANT: for database setup -> follow the instructions at loveyouforms.com 
+  or 1,000 using the Firebase platform, Google Sheets Sync, and SMTP Email API.
+  IMPORTANT: for database setup follow the instructions at loveyouforms.com 
 ------------------------------------------------------------------------------*/
-const loveyouforms = require('loveyouforms-app');
+const loveyouforms = require('loveyouforms');
 
 /*------------------------------------------------------------------------------
   Form-Handler HTTP Firebase Cloud Function
