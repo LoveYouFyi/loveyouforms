@@ -1,0 +1,3 @@
+[submodule "functions/dev/loveyouforms-package"]
+	path = functions/dev/loveyouforms-package
+	url = https://github.com/LoveYouFyi/loveyouforms-package.git
