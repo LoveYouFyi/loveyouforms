@@ -2,7 +2,7 @@ var fs = require('fs')
 
 /*------------------------------------------------------------------------------
   run file import from command-line: 
-  $ node -e 'require("./replace.js").replace'
+  $ node -e "require('./replace.js').replace('hello', 'there')"
 ------------------------------------------------------------------------------*/
 
 module.exports.replace = (edit, replace) => 
@@ -10,9 +10,9 @@ module.exports.replace = (edit, replace) =>
     if (err) {
       return console.log(err);
     }
-    console.log("edit/replace ", edit, replace);
-    var result = data.replace(/.\/dev\/itworks/g, replace);
-    console.log("result: ", result);
+    var regex = new RegExp(edit, 'g');
+
+    var result = data.replace(regex, replace);
 
     fs.writeFile("index.js", result, 'utf8', function (err) {
       if (err) return console.log(err);
