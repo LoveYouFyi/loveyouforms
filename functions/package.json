@@ -21,6 +21,7 @@
   "scripts": {
     "exportData": "node -e 'require(\"./export-import\").firestoreExport()'",
     "importData": "node -e 'require(\"./export-import\").firestoreImport()'",
+    "string": "node -e 'require(\"./dev/replace-string.js\").replace(\"index.js\", \"require(\\u0027hi\\u0027)\", \"require(\\u0027bye\\u0027)\" )'",
     "fbdev": "firebase emulators:start  --import=\"./dev/database\"",
     "serve": "firebase serve --only functions,firestore",
     "shell": "firebase functions:shell",
@@ -30,7 +31,7 @@
   },
   "## devDependencies Notes ###################################################": {
     "firestore-export-import": "required once to import starter database",
-    "fs": "needed for script exportData, and dev/replace-require-statement.js "
+    "fs": "needed for script exportData, and dev/replace-string.js "
   },
   "dependencies": {
     "loveyouforms": "^1.0.0"

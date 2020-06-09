@@ -3,7 +3,7 @@
   or 1,000 using the Firebase platform, Google Sheets Sync, and SMTP Email API.
   IMPORTANT: for database setup follow the instructions at loveyouforms.com 
 ------------------------------------------------------------------------------*/
-const loveyouforms = require('loveyouforms');
+const loveyouforms = require('bye');
 
 /*------------------------------------------------------------------------------
   Form-Handler HTTP Firebase Cloud Function
