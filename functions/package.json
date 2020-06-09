@@ -15,11 +15,13 @@
   },
   "## Scripts Notes ########################################################": {
     "exportData": "you may never need this",
-    "importData": "you should only need to use this once to import starter database"
+    "importData": "you should only need to use this once to import starter database",
+    "fbdev": "starts firebase local development emulators including database from functions/dev/database/"
   },
   "scripts": {
     "exportData": "node -e 'require(\"./export-import\").firestoreExport()'",
     "importData": "node -e 'require(\"./export-import\").firestoreImport()'",
+    "fbdev": "firebase emulators:start  --import=\"./dev/database\"",
     "serve": "firebase serve --only functions,firestore",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
