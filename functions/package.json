@@ -14,19 +14,22 @@
     "node": "10"
   },
   "## Scripts Notes ########################################################": {
-    "exportData": "you may never need this",
-    "importData": "you should only need to use this once to import starter database",
+    "importData": "you will need to run this once to import the starter database",
+    "exportData": "you may never need this. exports production database and saves to local file 'exported.json'",
     "fbdev": "starts firebase local development emulators including database from functions/dev/database/"
   },
   "scripts": {
-    "exportData": "node -e 'require(\"./export-import\").firestoreExport()'",
     "importData": "node -e 'require(\"./export-import\").firestoreImport()'",
-    "string": "node -e 'require(\"./dev/replace-string.js\").replace(\"index.js\", \"require(\\u0027hi\\u0027)\", \"require(\\u0027bye\\u0027)\" )'",
-    "fbdev": "firebase emulators:start  --import=\"./dev/database\"",
+    "exportData": "node -e 'require(\"./export-import\").firestoreExport()'",
+    "requireLoveYouFormsPackage": "node -e 'require(\"./dev/replace-string.js\").replace(\"index.js\", \"require(\\u0027loveyouforms\\u0027)\", \"require(\\u0027./dev/loveyouforms-package\\u0027)\" )'",
+    "reqDev": "npm run requireLoveYouFormsPackage",
+    "requireLoveYouForms": "node -e 'require(\"./dev/replace-string.js\").replace(\"index.js\", \"require(\\u0027./dev/loveyouforms-package\\u0027)\", \"require(\\u0027loveyouforms\\u0027)\" )'",
+    "reqProd": "npm run requireLoveYouForms",
+    "fbdev": "npm run reqDev && firebase emulators:start  --import=\"./dev/database\"",
     "serve": "firebase serve --only functions,firestore",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
+    "deploy": "npm run reqProd && firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
   "## devDependencies Notes ###################################################": {
