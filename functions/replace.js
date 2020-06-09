@@ -2,7 +2,8 @@ var fs = require('fs')
 
 /*------------------------------------------------------------------------------
   run file import from command-line: 
-  $ node -e "require('./replace.js').replace('hello', 'there')"
+  $ node -e "require('./replace.js').replace('\'./dev/loveyouforms-package\'', '\'loveyouforms\'')"
+  $ node -e "require('./replace.js').replace('\'loveyouforms\'', '\'./dev/loveyouforms-package\'')"
 ------------------------------------------------------------------------------*/
 
 module.exports.replace = (edit, replace) => 
@@ -10,6 +11,9 @@ module.exports.replace = (edit, replace) =>
     if (err) {
       return console.log(err);
     }
+
+    console.log("edit/replace ", edit, replace);
+
     var regex = new RegExp(edit, 'g');
 
     var result = data.replace(regex, replace);
