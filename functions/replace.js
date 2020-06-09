@@ -5,14 +5,16 @@ var fs = require('fs')
   $ node -e 'require("./replace.js").replace'
 ------------------------------------------------------------------------------*/
 
-module.exports.replace = fs.readFile("index.js", 'utf8', function (err,data) {
-  if (err) {
-    return console.log(err);
-  }
+module.exports.replace = (edit, replace) => 
+  fs.readFile("index.js", 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("edit/replace ", edit, replace);
+    var result = data.replace(/.\/dev\/itworks/g, replace);
+    console.log("result: ", result);
 
-  var result = data.replace(/loveyouforms-package/g, 'itworks');
-
-  fs.writeFile("index.js", result, 'utf8', function (err) {
-     if (err) return console.log(err);
+    fs.writeFile("index.js", result, 'utf8', function (err) {
+      if (err) return console.log(err);
+    });
   });
-});
