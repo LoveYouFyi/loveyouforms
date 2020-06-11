@@ -1,5 +1,5 @@
 // DATABASE CREDENTIALS: so export-import can authenticate with the database
-const serviceAccount = require('./service-account.json'); // download from firebase console
+const serviceAccount = require('../service-account.json'); // download from firebase console
 // FIRESTORE EXPORT-IMPORT
 const firestoreService = require('firestore-export-import');
 firestoreService.initializeApp(serviceAccount);
@@ -10,7 +10,7 @@ const fs = require('fs');
 /*------------------------------------------------------------------------------
   Firestore Import Entire Database or a Single Collection
   run file import from command-line: 
-  $ node -e 'require("./import-export").firestoreImport("./import-starter-database.json")'
+  $ node -e 'require("./database/import-export").firestoreImport("./database/import-starter-database.json")'
 ------------------------------------------------------------------------------*/
 
 module.exports.firestoreImport = jsonFile => {
@@ -25,7 +25,7 @@ module.exports.firestoreImport = jsonFile => {
 /*------------------------------------------------------------------------------
   Firestore Export
   run export from command-line (creates file named exported.json)
-  $ node -e 'require("./import-export").firestoreExport()'
+  $ node -e 'require("./database/import-export").firestoreExport()'
 ------------------------------------------------------------------------------*/
 
 // To get all collections provide empty array: .backups([])

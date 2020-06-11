@@ -14,13 +14,13 @@
     "node": "10"
   },
   "## Scripts Notes ########################################################": {
-    "importData": "you will need to run this once to import the starter database",
-    "exportData": "you may never need this. exports production database and saves to local file 'exported.json'",
+    "databaseImport": "you will need to run this once to import the starter database",
+    "databaseExport": "you may never need this. exports production database and saves to local file 'exported.json'",
     "fbdev": "starts firebase local development emulators including database from functions/dev/database/"
   },
   "scripts": {
-    "importData": "node -e 'require(\"./export-import\").firestoreImport()'",
-    "exportData": "node -e 'require(\"./export-import\").firestoreExport()'",
+    "databaseImport": "node -e 'require(\"./database/import-export\").firestoreImport(\"./database/import-starter-database.json\")'",
+    "databaseExport": "node -e 'require(\"./database/import-export\").firestoreExport()'",
     "requireLoveYouFormsPackage": "node -e 'require(\"./dev/replace-string.js\").replace(\"index.js\", \"require(\\u0027loveyouforms\\u0027)\", \"require(\\u0027./dev/loveyouforms-package\\u0027)\" )'",
     "reqDev": "npm run requireLoveYouFormsPackage",
     "requireLoveYouForms": "node -e 'require(\"./dev/replace-string.js\").replace(\"index.js\", \"require(\\u0027./dev/loveyouforms-package\\u0027)\", \"require(\\u0027loveyouforms\\u0027)\" )'",
