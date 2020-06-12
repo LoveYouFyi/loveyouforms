@@ -26,6 +26,7 @@
     "requireLoveYouForms": "node -e 'require(\"./dev/replace-string.js\").replace(\"index.js\", \"require(\\u0027./dev/loveyouforms-package\\u0027)\", \"require(\\u0027loveyouforms\\u0027)\" )'",
     "reqProd": "npm run requireLoveYouForms",
     "fbdev": "npm run reqDev && firebase emulators:start  --import=\"./dev/database\"",
+    "fbjest": "npm run reqDev && firebase emulators:start --only firestore,functions  --import=\"./dev/database\"",
     "serve": "firebase serve --only functions,firestore",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
