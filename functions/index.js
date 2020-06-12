@@ -34,3 +34,10 @@ exports.firestoreToSheets = loveyouforms.firestoreToSheets;
 ------------------------------------------------------------------------------*/
 exports.schemaApp = loveyouforms.schemaApp;
 exports.schemaFormTemplate = loveyouforms.schemaFormTemplate;
+
+
+/*------------------------------------------------------------------------------
+  Jest Test Example
+------------------------------------------------------------------------------*/
+
+exports.onCreate = loveyouforms.onCreate;
