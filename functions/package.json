@@ -32,7 +32,8 @@
     "start": "npm run shell",
     "deploy": "npm run reqProd && firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "test": "jest --watchAll"
+    "test": "jest",
+    "testwa": "jest --watchAll"
   },
   "## devDependencies Notes ###################################################": {
     "firestore-export-import": "required once to import starter database",
