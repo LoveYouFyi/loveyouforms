@@ -7,9 +7,9 @@
 ------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------
-  Do not edit require() expression (e.g. change single to double quotes). 
-  Npm scripts edit-replace it for local development using Firebase emulators. 
-  Scripts change it back to production version as needed. 
+  Do not edit require() expression (e.g. change single to double quotes) because
+  Npm script edit-replaces it for local development using Firebase emulators. 
+  Script changes it back to production version as needed. 
 ------------------------------------------------------------------------------*/
 const loveyouforms = require('loveyouforms'); 
 
