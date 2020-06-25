@@ -1,21 +1,22 @@
 /*------------------------------------------------------------------------------
-  LoveYouForms is a cloud app that handles form submissions for one website 
+  LoveYouForms is a cloud app that handles form submissions for one website
   or 1,000 using the Firebase platform, Google Sheets Sync, and SMTP Email API.
   ------------------------------------------------------------------------------
-  IMPORTANT: for database setup follow the instructions at loveyouforms.com 
+  IMPORTANT: for database setup follow the instructions at loveyouforms.com
   IMPORTANT: for development or contributing to the project see loveyouform.com
 ------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------
   Do not edit require() expression (e.g. change single to double quotes) because
-  Npm script edit-replaces it for local development using Firebase emulators. 
-  Script changes it back to production version as needed. 
+  Npm script edit-replaces it for local development using Firebase emulators.
+  Script changes it back to production version as needed.
 ------------------------------------------------------------------------------*/
-const loveyouforms = require('loveyouforms'); 
+// Requires loveyouforms package based on environment: dev vs prod
+const loveyouforms = require(require('./env.keys.js').loveyouforms);
 
 /*------------------------------------------------------------------------------
   Form-Handler HTTP Firebase Cloud Function
-  Handles data sent by html form submission, validates allowed form fields and 
+  Handles data sent by html form submission, validates allowed form fields and
   creates Firestore database entry with the allowed fields.
 ------------------------------------------------------------------------------*/
 exports.formHandler = loveyouforms.formHandler;
@@ -29,8 +30,8 @@ exports.firestoreToSheets = loveyouforms.firestoreToSheets;
 
 /*------------------------------------------------------------------------------
   Doc-Schema Trigger Firebase Cloud Functions
-  When Firestore database 'doc' of collection type 'app' or 'formTemplate' is 
-  created, this adds default fields/schema to it. 
+  When Firestore database 'doc' of collection type 'app' or 'formTemplate' is
+  created, this adds default fields/schema to it.
 ------------------------------------------------------------------------------*/
 exports.schemaApp = loveyouforms.schemaApp;
 exports.schemaFormTemplate = loveyouforms.schemaFormTemplate;
