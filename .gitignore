@@ -1,4 +1,8 @@
-# Firebase 
+# Environment Keys to be kept Private
+keys.dev.js
+keys.prod.js
+
+# Firebase
 service-account*.json
 .firebaserc
 firebase.json

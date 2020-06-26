@@ -12,7 +12,7 @@
   Script changes it back to production version as needed.
 ------------------------------------------------------------------------------*/
 // Requires loveyouforms package based on environment: dev vs prod
-const loveyouforms = require(require('./env.keys.js').loveyouforms);
+const loveyouforms = require(require('./env/keys.public.js').loveyouforms);
 
 /*------------------------------------------------------------------------------
   Form-Handler HTTP Firebase Cloud Function
