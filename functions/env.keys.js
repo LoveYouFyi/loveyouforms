@@ -25,8 +25,13 @@ const prodKeys = {
   loveyouforms: 'loveyouforms',
 }
 
-if (process.env.NODE_ENV === "production") {
-  module.exports = prodKeys;
-} else {
-  module.exports = devKeys();
-}
+let exportEnvironment;
+(async () => {
+  if (process.env.NODE_ENV === "production") {
+    exportEnvironment = prodKeys;
+  } else {
+    exportEnvironment = devKeys();
+  }
+})();
+
+module.exports = exportEnvironment;
