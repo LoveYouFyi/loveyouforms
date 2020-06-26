@@ -6,11 +6,6 @@
   IMPORTANT: for development or contributing to the project see loveyouform.com
 ------------------------------------------------------------------------------*/
 
-/*------------------------------------------------------------------------------
-  Do not edit require() expression (e.g. change single to double quotes) because
-  Npm script edit-replaces it for local development using Firebase emulators.
-  Script changes it back to production version as needed.
-------------------------------------------------------------------------------*/
 // Requires loveyouforms package based on environment: dev vs prod
 const loveyouforms = require(require('./env/keys.public.js').loveyouforms);
 
@@ -35,10 +30,3 @@ exports.firestoreToSheets = loveyouforms.firestoreToSheets;
 ------------------------------------------------------------------------------*/
 exports.schemaApp = loveyouforms.schemaApp;
 exports.schemaFormTemplate = loveyouforms.schemaFormTemplate;
-
-
-/*------------------------------------------------------------------------------
-  Jest Test Example
-------------------------------------------------------------------------------*/
-
-exports.onCreate = loveyouforms.onCreate;

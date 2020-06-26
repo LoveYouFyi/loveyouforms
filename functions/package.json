@@ -23,20 +23,15 @@
     "database:import": "node -e 'require(\"./database/import-export\").firestoreImport(\"./database/import-starter-database.json\")'",
     "database:export": "node -e 'require(\"./database/import-export\").firestoreExport()'",
     "Environment Variables": "################################################",
-    "env:get": "firebase functions:config:get",
-    "env:dev": "firebase functions:config:set env.use='development'",
-    "env:unset": "firebase functions:config:unset env.use",
     "LoveYouForms Dev vs Default 'require' expression": "#####################",
-    "require:dev": "node -e 'require(\"./dev/replace-string.js\").replace(\"index.js\", \"require(\\u0027loveyouforms\\u0027)\", \"require(\\u0027./dev/loveyouforms-package\\u0027)\" )'",
-    "require:default": "node -e 'require(\"./dev/replace-string.js\").replace(\"index.js\", \"require(\\u0027./dev/loveyouforms-package\\u0027)\", \"require(\\u0027loveyouforms\\u0027)\" )'",
-    "fbdev": "npm run require:dev && firebase emulators:start  --import=\"./dev/database\"",
-    "fbjest": "npm run env:dev && npm run require:dev && firebase emulators:start --only firestore,functions  --import=\"./dev/database\"",
+    "fbdev": "firebase emulators:start  --import=\"./dev/database\"",
+    "fbjest": "firebase emulators:start --only firestore,functions  --import=\"./dev/database\"",
     "Testing": "##############################################################",
     "test": "jest",
     "testwa": "jest --watchAll",
     "testco": "jest --coverage",
     "Deployment": "###########################################################",
-    "deploy": "npm run env:unset && npm run require:default && firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
     "Other": "################################################################",
     "serve": "firebase serve --only functions,firestore",
     "shell": "firebase functions:shell",
@@ -48,7 +43,7 @@
     "fs": "needed for script exportData, and dev/replace-string.js "
   },
   "dependencies": {
-    "loveyouforms": "^1.0.0"
+    "loveyouforms": "^1.0.1"
   },
   "devDependencies": {
     "@firebase/testing": "^0.20.1",
@@ -58,6 +53,7 @@
     "firebase-functions-test": "^0.1.6",
     "firestore-export-import": "^0.6.0",
     "fs": "0.0.1-security",
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "public-ip": "^4.0.1"
   }
 }
