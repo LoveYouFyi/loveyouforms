@@ -1,39 +1,26 @@
 const publicIp = require('public-ip');
 
-/*
-(async () => {
 
-  if (await publicIp.v4()) {
-    myIp = await publicIp.v4()
-  } else if (await publicIp.v6()) {
-    myIp = await publicIp.v6()
-  }
-})();
-*/
+const devKeys = () => {
 
-const myIp = async () => {
-  const v4 = await publicIp.v4();
-  console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ ", v4);
-
-  if (v4) {
-    return v4;
-  } else if (!v4) {
-    const v6 = await publicIp.v6();
-    if (v6) {
-      console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ ", v6);
-      return v6;
+  const keys = async () => {
+    if (await publicIp.v4()) {
+      const ip = await publicIp.v4();
+      return ip;
+    } else if (await publicIp.v6()) {
+      const ip = await publicIp.v6();
+      return ip;
+    } else {
+      return 'IP Address not found!';
     }
-  } else {
-    console.info("IP Address not found!")
   }
-}
-//ip();
-myIp();
 
-
-const devKeys = {
-  loveyouforms: './dev/loveyouforms-package',
+  return ({
+    loveyouforms: './dev/loveyouforms-package'
+ //   myIp
+  })
 }
+
 const prodKeys = {
   loveyouforms: 'loveyouforms',
 }
@@ -41,5 +28,5 @@ const prodKeys = {
 if (process.env.NODE_ENV === "production") {
   module.exports = prodKeys;
 } else {
-  module.exports = devKeys;
+  module.exports = devKeys();
 }
