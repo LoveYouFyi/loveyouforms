@@ -43,7 +43,7 @@
     "fs": "needed for script exportData, and dev/replace-string.js "
   },
   "dependencies": {
-    "loveyouforms": "^1.0.1"
+    "loveyouforms": "^1.0.0"
   },
   "devDependencies": {
     "@firebase/testing": "^0.20.1",
