@@ -32,13 +32,13 @@ Private keys files are ignored by git as: keys.dev.js and keys.prod.js
 
 const devKeys = {
   loveyouforms: './dev/loveyouforms-package',
-  // uncomment to use properties from supplemental keys file
+  // uncomment to use properties from supplemental keys file above
   //...keysDevFile
 }
 
 const prodKeys = {
   loveyouforms: 'loveyouforms',
-  // uncomment to use properties from supplemental keys file
+  // uncomment to use properties from supplemental keys file above
   //...keysProdFile
 }
 
