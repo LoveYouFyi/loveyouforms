@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------------------
-ENVIRONMENT VARIABLES
+ENVIRONMENT VARIABLE KEYS
 Firebase local development emulator does not set process.env.NODE_ENV, but the
 cloud server does set process.env.NODE_ENV as 'production' (deployed functions).
 ---> See the the conditional module.exports statement below...
@@ -31,13 +31,13 @@ Private keys files are ignored by git as: keys.dev.js and keys.prod.js
 //const keysProdFile = require('./keys.prod.js')
 
 const devKeys = {
-  loveyouforms: './dev/loveyouforms-package',
+  requireLoveYouFormsFrom: './dev/loveyouforms-package',
   // uncomment to use properties from supplemental keys file above
   //...keysDevFile
 }
 
 const prodKeys = {
-  loveyouforms: 'loveyouforms',
+  requireLoveYouFormsFrom: 'loveyouforms',
   // uncomment to use properties from supplemental keys file above
   //...keysProdFile
 }
