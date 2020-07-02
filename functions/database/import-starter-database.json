@@ -65,7 +65,7 @@
               "position":8
            }
         ],
-        "fieldsAkismet":{
+        "fieldsSpamCheck":{
            "content":[
               "message"
            ],
@@ -134,7 +134,7 @@
               "position":12
            }
         ],
-        "fieldsAkismet":{
+        "fieldsSpamCheck":{
            "content":[
               "message"
            ],
@@ -232,7 +232,7 @@
               "id":"spam"
            }
         ],
-        "fieldsAkismet":{
+        "fieldsSpamCheck":{
            "other":[
               "email",
               "name"
