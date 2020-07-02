@@ -22,8 +22,8 @@
     "Starter Database": "#####################################################",
     "database:import": "node -e 'require(\"./database/import-export\").firestoreImport(\"./database/import-starter-database.json\")'",
     "database:export": "node -e 'require(\"./database/import-export\").firestoreExport()'",
-    "Environment Variables": "################################################",
-    "LoveYouForms Dev vs Default 'require' expression": "#####################",
+    "Local Development": "####################################################",
+    "devFirestoreExport": "firebase emulators:export ./dev/database",
     "fbdev": "firebase emulators:start  --import=\"./dev/database\"",
     "fbjest": "firebase emulators:start --only firestore,functions  --import=\"./dev/database\"",
     "Testing": "##############################################################",
@@ -38,7 +38,7 @@
     "start": "npm run shell",
     "logs": "firebase functions:log"
   },
-  "## devDependencies Notes ###################################################": {
+  "## devDependencies Notes ################################################": {
     "firestore-export-import": "required once to import starter database",
     "fs": "needed for script exportData, and dev/replace-string.js "
   },
