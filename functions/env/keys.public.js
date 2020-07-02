@@ -27,7 +27,7 @@ Private keys files are ignored by git as: keys.dev.js and keys.prod.js
   }
 3) Uncomment the corresponding commented lines of code below
 ------------------------------------------------------------------------------*/
-//const keysDevFile = require('./keys.dev.js')
+
 //const keysProdFile = require('./keys.prod.js')
 
 const devKeys = {
@@ -44,7 +44,31 @@ const prodKeys = {
 
 // Conditionally export devKeys or prodKeys
 if (process.env.NODE_ENV === "production") {
+
+  const prodKeys = {
+    requireLoveYouFormsFrom: 'loveyouforms',
+    // uncomment to use properties from supplemental keys file above
+    //...keysProdFile
+  }
   module.exports = prodKeys;
+
 } else {
+
+  let keysDevFile;
+  try {
+    keysDevFile = require('./keys.dev.js')
+  } catch (err) {
+    keysDevFile = undefined;
+    return keysDevFile;
+  }
+
+  const devKeys = {
+    requireLoveYouFormsFrom: './dev/loveyouforms-package',
+    // uncomment to use properties from supplemental keys file above
+    ...keysDevFile && { ...keysDevFile }
+  }
+  console.log("devKeys $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ ", devKeys);
+
   module.exports = devKeys;
+
 }
