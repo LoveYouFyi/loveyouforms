@@ -14,7 +14,7 @@ PUBLIC KEYS
 To add additional keys that can be included in the public repository, add them
 below.
 
-PRIVATE KEYS
+PRIVATE KEYS (specific to dev & prod environments)
 To add keys that should not be included in the public repository:
 Private keys files are ignored by git as: keys.dev.js and keys.prod.js
 
@@ -25,50 +25,35 @@ Private keys files are ignored by git as: keys.dev.js and keys.prod.js
   module.exports = {
     myProdKey: "hee hee hee"
   }
-3) Uncomment the corresponding commented lines of code below
 ------------------------------------------------------------------------------*/
 
-//const keysProdFile = require('./keys.prod.js')
-
-const devKeys = {
-  requireLoveYouFormsFrom: './dev/loveyouforms-package',
-  // uncomment to use properties from supplemental keys file above
-  //...keysDevFile
+// If file exists return it
+const file = file => {
+  // require is synchronous so can simply wrap it with a try/catch
+  try {
+    return require(file)
+  } catch (err) {
+    return undefined;
+  }
 }
 
+// Prod Keys
+const prodKeysFile = file('./keys.prod.js');
 const prodKeys = {
   requireLoveYouFormsFrom: 'loveyouforms',
-  // uncomment to use properties from supplemental keys file above
-  //...keysProdFile
+  ...prodKeysFile && { ...prodKeysFile }
+}
+
+// Dev Keys
+const devKeysFile = file('./keys.dev.js');
+const devKeys = {
+  requireLoveYouFormsFrom: './dev/loveyouforms-package',
+  ...devKeysFile && { ...devKeysFile }
 }
 
 // Conditionally export devKeys or prodKeys
 if (process.env.NODE_ENV === "production") {
-
-  const prodKeys = {
-    requireLoveYouFormsFrom: 'loveyouforms',
-    // uncomment to use properties from supplemental keys file above
-    //...keysProdFile
-  }
   module.exports = prodKeys;
-
 } else {
-
-  let keysDevFile;
-  try {
-    keysDevFile = require('./keys.dev.js')
-  } catch (err) {
-    keysDevFile = undefined;
-    return keysDevFile;
-  }
-
-  const devKeys = {
-    requireLoveYouFormsFrom: './dev/loveyouforms-package',
-    // uncomment to use properties from supplemental keys file above
-    ...keysDevFile && { ...keysDevFile }
-  }
-  console.log("devKeys $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ ", devKeys);
-
   module.exports = devKeys;
-
 }
