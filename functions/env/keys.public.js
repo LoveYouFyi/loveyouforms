@@ -28,10 +28,10 @@ Private keys files are ignored by git as: keys.dev.js and keys.prod.js
 ------------------------------------------------------------------------------*/
 
 // If file exists return it
-const file = file => {
+const file = path => {
   // require is synchronous so can simply wrap it with a try/catch
   try {
-    return require(file)
+    return require(path)
   } catch (err) {
     return undefined;
   }
