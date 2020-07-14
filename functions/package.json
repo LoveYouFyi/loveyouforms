@@ -13,6 +13,7 @@
   "engines": {
     "node": "10"
   },
+  "main": "index.js",
   "## Scripts Notes ########################################################": {
     "database:import": "you will need to run this once to import the starter database",
     "database:export": "you may never need this. exports production database and saves to local file 'exported.json'",
