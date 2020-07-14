@@ -2,8 +2,20 @@
 
 ## A JavaScript cloud app to manage form submissions for one site or 1,000
 
-(static sites love this app)
+## Built with...
 
-Google Sheets Sync + Email Notifications
+* Firebase Database & Node.js Cloud Functions
 
-Built with: Firebase, Google Sheets, and your favorite SMTP email provider
+* Google Sheets Sync
+
+* Email Notifications & Spam Filter
+
+## Quick Start
+
+1. Clone repository
+
+2. $ cd functions
+
+3. npm install
+
+4. View loveyouforms package code at functions/node_modules/loveyouforms
