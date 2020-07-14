@@ -6,8 +6,8 @@
   IMPORTANT: for development or contributing to the project see loveyouform.com
 ------------------------------------------------------------------------------*/
 
-// Requires loveyouforms package from (dev vs node_modules) by environment:
-//   production vs non-production/development
+// Requires loveyouforms package based on environment dev vs prod:
+// dev/loveyouforms-package vs node_modules/loveyouforms
 const environmentKeys = require('./env/keys.public.js');
 const loveyouforms = require(environmentKeys.requireLoveYouFormsFrom);
 
