@@ -41,7 +41,7 @@
   },
   "## devDependencies Notes ################################################": {
     "firestore-export-import": "required once to import starter database",
-    "fs": "needed for script exportData, and dev/replace-string.js "
+    "fs": "needed for script to export data to file"
   },
   "dependencies": {
     "loveyouforms": "^1.0.2"
