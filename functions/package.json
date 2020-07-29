@@ -24,6 +24,7 @@
     "database:import": "node -e 'require(\"./database/import-export\").firestoreImport(\"./database/import-starter-database.json\")'",
     "database:export": "node -e 'require(\"./database/import-export\").firestoreExport()'",
     "Local Development": "####################################################",
+    "RESTART FULL TERMINAL": "if devFirestoreExport complains about not finding emulators",
     "devFirestoreExport": "firebase emulators:export ./dev/database",
     "fbdev": "firebase emulators:start  --import=\"./dev/database\"",
     "fbjest": "firebase emulators:start --only firestore,functions  --import=\"./dev/database\"",
