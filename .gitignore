@@ -12,6 +12,9 @@ firebase-export-metadata.json
 # Export/Import Data
 exported*.json
 
+# VSCode
+.vscode
+
 # OS
 .DS_Store
 
