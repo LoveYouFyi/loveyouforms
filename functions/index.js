@@ -8,8 +8,8 @@
 
 // Requires loveyouforms package based on environment dev vs prod:
 // dev/loveyouforms-package vs node_modules/loveyouforms
-const environmentKeys = require('./env/keys.public.js');
-const loveyouforms = require(environmentKeys.requireLoveYouFormsFrom);
+const env = require('./config/public.js');
+const loveyouforms = require(env.requireLoveYouFormsFrom);
 
 /*------------------------------------------------------------------------------
   Form-Handler HTTP Firebase Cloud Function

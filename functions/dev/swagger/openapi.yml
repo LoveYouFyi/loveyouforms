@@ -1,0 +1,64 @@
+---
+openapi: '3.0.0'
+info:
+  description: 'This is API documentation for LoveYouForms. You can find out more about
+    LoveYouForms at [https://loveyouforms.com](https://loveyouforms.com).'
+tags:
+  - name: LoveYouForms
+paths:
+  "/formHandler":
+    post:
+      tags:
+      - LoveYouForms
+      summary: Submit form
+      requestBody:
+        required: true
+        content:
+          text/plain:
+            schema:
+              "$ref": "#/definitions/form1"
+      responses:
+        '200':
+          description: success
+        '403':
+          description: Forbidden
+definitions:
+  form1:
+    type: object
+    properties:
+      service:
+        type: string
+        example: Node.js Development
+      budget:
+        type: string
+        example: $20,000 or more
+      timeframe:
+        type: string
+        example: Within 3 months
+      name:
+        type: string
+        example: Erik Hendrick
+      phone:
+        type: string
+        example: 904-555-1212
+      email:
+        type: string
+        example: erik@loveyou.fyi
+      message:
+        type: string
+        example: Hi, how are you!?
+      urlAction:
+        type: string
+        example: http://localhost:5001/loveyou-forms/us-central1/formHandler
+      appKey:
+        type: string
+        example: LOVEYOUFORMS8GCXSg6fbLgteaWDLnTwL2EC3Kj7y4kDWqGU4Vzcq8UQKAzfZvJ4xkjTv8GjXKvdEs6BHGjU
+      urlRedirect:
+        type: string
+        example: false
+      templateName:
+        type: string
+        example: contactDefault
+      webformId:
+        type: string
+        example: contact1

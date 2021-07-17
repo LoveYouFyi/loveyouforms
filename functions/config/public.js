@@ -16,44 +16,47 @@ below.
 
 PRIVATE KEYS (specific to dev & prod environments)
 To add keys that should not be included in the public repository:
-Private keys files are ignored by git as: keys.dev.js and keys.prod.js
+Private config files are ignored by git as: dev.js and prod.js
 
 1) Add a new key file to this directory as one or both of
-  keys.dev.js
-  keys.prod.js
+  dev.js
+  prod.js
 2) Within the added files, export an object with the keys, e.g.
   module.exports = {
-    myProdKey: "hee hee hee"
+    keys: {
+      myProdKey: "hee hee hee"
+    }
   }
 ------------------------------------------------------------------------------*/
 
 // If file exists return it
-const file = path => {
-  // require is synchronous so can simply wrap it with a try/catch
+const config = path => {
+  // require is synchronous, can wrap in try catch so if file does not exist...
   try {
-    return require(path)
-  } catch (err) {
-    return undefined;
+    const config = require(path)
+    return config
+  } catch(e) {
+    return undefined
   }
 }
 
-// Prod Keys
-const prodKeysFile = file('./keys.prod.js');
-const prodKeys = {
-  requireLoveYouFormsFrom: 'loveyouforms',
-  ...prodKeysFile && { ...prodKeysFile }
+// Dev Config
+let devConfig = config('./dev.js')
+devConfig = {
+  requireLoveYouFormsFrom: './dev/loveyouforms-package',
+  ...devConfig && { ...devConfig }
 }
 
-// Dev Keys
-const devKeysFile = file('./keys.dev.js');
-const devKeys = {
-  requireLoveYouFormsFrom: './dev/loveyouforms-package',
-  ...devKeysFile && { ...devKeysFile }
+// Prod Config
+let prodConfig = config('./prod.js')
+prodConfig = {
+  requireLoveYouFormsFrom: 'loveyouforms',
+  ...prodConfig && { ...prodConfig }
 }
 
 // Conditionally export devKeys or prodKeys
 if (process.env.NODE_ENV === "production") {
-  module.exports = prodKeys;
+  module.exports = prodKeys
 } else {
-  module.exports = devKeys;
+  module.exports = devConfig
 }

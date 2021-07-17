@@ -1,6 +1,6 @@
-# LoveYouForms
+# LoveYouForms - Node.js Application
 
-## A JavaScript cloud app to manage form submissions for one site or 1,000
+## A RESTful JavaScript cloud app to manage form submissions for one site or 1,000
 
 ## Featuring
 
