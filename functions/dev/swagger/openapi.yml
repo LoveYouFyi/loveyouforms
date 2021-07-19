@@ -1,29 +1,56 @@
 ---
 openapi: '3.0.0'
 info:
-  description: 'This is API documentation for LoveYouForms. You can find out more about
-    LoveYouForms at [https://loveyouforms.com](https://loveyouforms.com).'
+  title: Swagger LoveYouForms
+  description: This is API documentation for LoveYouForms. You can find out more about LoveYouForms at [https://loveyouforms.com](https://loveyouforms.com).<br><br>
+    See the <strong><u>source package code</u></strong> [https://github.com/LoveYouFyi/loveyouforms-package](https://github.com/LoveYouFyi/loveyouforms-package)<br>
+    See the <strong><u>app wrapper code</u></strong> [https://github.com/LoveYouFyi/loveyouforms](https://github.com/LoveYouFyi/loveyouforms)<br>
 tags:
-  - name: LoveYouForms
+  - name: Send Form
 paths:
   "/formHandler":
     post:
       tags:
-      - LoveYouForms
-      summary: Submit form
+      - Send Form
+      summary: Send form
       requestBody:
         required: true
         content:
           text/plain:
             schema:
-              "$ref": "#/definitions/form1"
+              "$ref": "#/definitions/contactDefault"
+            examples:
+              contactDefault:
+                value:
+                  service: Node.js Development
+                  budget: $20,000 or more
+                  timeframe: Within 3 months
+                  name: Erik Hendrick
+                  phone: 904-555-1212
+                  email: erik@loveyou.fyi
+                  message: Hi, how are you!?
+                  urlAction: http://localhost:5001/loveyou-forms/us-central1/formHandler
+                  appKey: LOVEYOUFORMS8GCXSg6fbLgteaWDLnTwL2EC3Kj7y4kDWqGU4Vzcq8UQKAzfZvJ4xkjTv8GjXKvdEs6BHGjU
+                  urlRedirect: false
+                  templateName: contactDefault
+                  webformId: contact1
+              contactAlt:
+                value:
+                  name: Erik Hendrick
+                  email: erik@loveyou.fyi
+                  message: Hi, how are you!?
+                  urlAction: http://localhost:5001/loveyou-forms/us-central1/formHandler
+                  appKey: LOVEYOUFORMS8GCXSg6fbLgteaWDLnTwL2EC3Kj7y4kDWqGU4Vzcq8UQKAzfZvJ4xkjTv8GjXKvdEs6BHGjU
+                  urlRedirect: false
+                  templateName: contactAlt
+                  webformId: contact2
       responses:
         '200':
           description: success
         '403':
           description: Forbidden
 definitions:
-  form1:
+  contactDefault:
     type: object
     properties:
       service:
@@ -62,3 +89,5 @@ definitions:
       webformId:
         type: string
         example: contact1
+
+
