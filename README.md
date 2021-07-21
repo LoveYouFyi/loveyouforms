@@ -2,13 +2,13 @@
 
 ## A RESTful JavaScript cloud app to manage form submissions for one site or 1,000
 
-## Featuring
-
-* Firebase Database & Node.js Cloud Functions
-
+### Features
 * Google Sheets Sync
+* Email Notifications
+* Spam Filter with Akismet
+* Deployed to cloud Firebase, makes use of Firestore database
 
-* Email Notifications & Spam Filter
+### This repo is the app-wrapper, find the primary codebase at ❤️ **<a href="https://github.com/LoveYouFyi/loveyouforms-package">loveyouforms-package</a>** ❤️
 
 # Quick Start - To view the Node Package Code
 
