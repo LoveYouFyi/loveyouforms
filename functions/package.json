@@ -15,21 +15,22 @@
   },
   "main": "index.js",
   "scripts": {
-    "Starter Database": "#####################################################",
+    "#1 Starter Database": "#####################################################",
     "(NOTE) database:import": "you will need to run this once to import the starter database",
-    "(NOTE) database:export": "you may never need this. exports production database and saves to local file 'exported.json'",
+    "(NOTE) database:export": "you may never need this. exports cloud/production database and saves to local file 'exported.json'",
     "database:import": "node -e 'require(\"./database/import-export\").firestoreImport(\"./database/import-starter-database.json\")'",
     "database:export": "node -e 'require(\"./database/import-export\").firestoreExport()'",
-    "Local Development": "####################################################",
-    "(NOTE) RESTART FULL TERMINAL": "if devFirestoreExport complains about not finding emulators",
-    "devFirestoreExport": "firebase emulators:export ./dev/database",
+    "#2 Local Development": "####################################################",
     "dev": "concurrently --kill-others \"npm run fbdev\" \"npm run swagger:watch\"",
     "(NOTE) fbdev": "starts firebase local development emulators including database from functions/dev/database/",
     "fbdev": "firebase emulators:start --inspect-functions --import=\"./dev/database\"",
     "(NOTE) SWAGGER WATCH": "To run 'watch', install nodemon globally: $ npm install nodemon -g",
     "swagger": "node ./dev/swagger/app.js",
     "swagger:watch": "nodemon -e js,yml ./dev/swagger/app.js",
-    "Deployment": "###########################################################",
+    "#3 Export Local Database": "####################################################",
+    "(NOTE) RESTART FULL TERMINAL": "if devFirestoreExport complains about not finding emulators",
+    "devFirestoreExport": "firebase emulators:export ./dev/database",
+    "#4 Deployment": "###########################################################",
     "deploy": "firebase deploy --only functions",
     "Other": "################################################################",
     "serve": "firebase serve --only functions,firestore",
@@ -37,12 +38,12 @@
     "start": "npm run shell",
     "logs": "firebase functions:log"
   },
-  "## devDependencies Notes ################################################": {
-    "firestore-export-import": "required once to import starter database",
-    "fs": "needed for script to export data to file"
-  },
   "dependencies": {
     "loveyouforms": "^1.0.2"
+  },
+  "(NOTE) devDependencies Notes ############################################": {
+    "firestore-export-import": "required once to import starter database",
+    "fs": "needed for script to export data to file"
   },
   "devDependencies": {
     "concurrently": "^6.2.0",
