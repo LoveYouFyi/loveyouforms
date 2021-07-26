@@ -45,7 +45,7 @@ Go to **<a href="https://github.com/LoveYouFyi/loveyouforms-package">loveyouform
 
 6. **Quick Start is not yet complete** -more documentation coming soon so you can develop locally or deploy to the Firebase platform.
 
-# Motivation
+# Motivation for LoveYouForms
 
 To make it fast and simple to capture, handle, and view form submissions for **unlimited web forms** of **unlimited websites** &mdash; **from a single cloud application** that requires minimal maintenance and cost.
 
