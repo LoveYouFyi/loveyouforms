@@ -45,11 +45,7 @@ Go to **<a href="https://github.com/LoveYouFyi/loveyouforms-package">loveyouform
 
 6. **Quick Start is not yet complete** -more documentation coming soon so you can develop locally or deploy to the Firebase platform.
 
-## Get the code - see the Github repositories
-* App wrapper **<a href="https://github.com/LoveYouFyi/loveyouforms">loveyouforms</a>**
-* **<u>Primary codebase</u> <a href="https://github.com/LoveYouFyi/loveyouforms-package">loveyouforms-package</a>**
-
-## Motivation
+# Motivation
 
 To make it fast and simple to capture, handle, and view form submissions for **unlimited web forms** of **unlimited websites** &mdash; **from a single cloud application** that requires minimal maintenance and cost.
 
@@ -72,7 +68,7 @@ Your own form handling application:
 
 It is a **Node.js application** which is served as cloud functions on the **Google Firebase platform**. It uses the scalable NoSQL cloud **Firestore database** of the Firebase platform. Cloud funtions make use of the **Google API** to sync form data to **Google Sheets** spreadsheets. Emails are sent using the **SMTP Email Provider API** of your choice (such as Sendgrid). **Spam filtering with Akismet** optionally built in.
 
-## Why Use LoveYouForms?
+# Why Use LoveYouForms?
 
 The app runs on Google's Firebase platform. So the servers, Node.js environment, and database are managed by them, and scaling is automated.
 
@@ -81,7 +77,7 @@ The app runs on Google's Firebase platform. So the servers, Node.js environment,
 * **Performance** &mdash; never worry about being able to handle volume, or scaling.
 
 
-## When to Use LoveYouForms?
+# When to Use LoveYouForms?
 
 Use it for websites which primary motivation is to capture form submissions from anonymous visitors, that is, not authenticated / not logged in. Use it for capturing data from contact forms, lead-generation forms, email addresses, feedback, etc.
 
